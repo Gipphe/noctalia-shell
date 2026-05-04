@@ -380,10 +380,10 @@ Singleton {
       "id": "hyprland",
       "name": "Hyprland",
       "category": "compositor",
-      "input": "hyprland.conf",
+      "input": "hyprland.lua",
       "outputs": [
         {
-          "path": "~/.config/hypr/noctalia/noctalia-colors.conf"
+          "path": "~/.config/hypr/noctalia/noctalia-colors.lua"
         }
       ],
       "postProcess": () => `${templateApplyScript} hyprland`

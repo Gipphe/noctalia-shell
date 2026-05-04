@@ -334,8 +334,8 @@ niri)
 hyprland)
     echo "🎨 Applying 'noctalia' theme to Hyprland..."
     CONFIG_DIR="$HOME/.config/hypr"
-    CONFIG_FILE="$CONFIG_DIR/hyprland.conf"
-    THEME_FILE="$CONFIG_DIR/noctalia/noctalia-colors.conf"
+    CONFIG_FILE="$CONFIG_DIR/hyprland.lua"
+    THEME_FILE="$CONFIG_DIR/noctalia/noctalia-colors.lua"
 
     INCLUDE_LINE="source = $THEME_FILE"
 
@@ -347,7 +347,7 @@ hyprland)
         echo "Created new config file with noctalia theme."
     else
         # Check if noctalia theme source already exists (flexible matching)
-        if grep -qE 'source\s*=\s*.*noctalia.*\.conf' "$CONFIG_FILE"; then
+        if grep -qE 'require\(.*noctalia.*\.lua\)' "$CONFIG_FILE"; then
             echo "Theme already included, skipping modification."
         else
             # Only convert symlink when we actually need to write (NixOS read-only symlinks)
