@@ -336,8 +336,9 @@ hyprland)
     CONFIG_DIR="$HOME/.config/hypr"
     CONFIG_FILE="$CONFIG_DIR/hyprland.lua"
     THEME_FILE="$CONFIG_DIR/noctalia/noctalia-colors.lua"
+    REQUIRE_MODULE="noctalia.noctalia-colors"
 
-    INCLUDE_LINE="require('$THEME_FILE')"
+    INCLUDE_LINE="require('$REQUIRE_MODULE')"
 
     # Check if the config file exists.
     if [ ! -f "$CONFIG_FILE" ]; then
